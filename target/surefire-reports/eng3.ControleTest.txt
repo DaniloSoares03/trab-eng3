@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: eng3.ControleTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
+eng3.ControleTest.testEmprestarAlunoInexistente()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Controle.emprestar(String, int[], int)" because "this.controle" is null
+	at eng3.ControleTest.testEmprestarAlunoInexistente(ControleTest.java:20)
+
+eng3.ControleTest.testEmprestarAlunoComDebito()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Controle.emprestar(String, int[], int)" because "this.controle" is null
+	at eng3.ControleTest.testEmprestarAlunoComDebito(ControleTest.java:26)
+
+eng3.ControleTest.testEmprestarComSucesso()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Controle.emprestar(String, int[], int)" because "this.controle" is null
+	at eng3.ControleTest.testEmprestarComSucesso(ControleTest.java:32)
+
+eng3.ControleTest.testEmprestarSemLivros()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Controle.emprestar(String, int[], int)" because "this.controle" is null
+	at eng3.ControleTest.testEmprestarSemLivros(ControleTest.java:38)
+
+eng3.ControleTest.testEmprestarLivrosIndisponiveis()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Controle.emprestar(String, int[], int)" because "this.controle" is null
+	at eng3.ControleTest.testEmprestarLivrosIndisponiveis(ControleTest.java:44)
+
+eng3.ControleTest.testEmprestarApenasAlgunsLivrosDisponiveis()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Controle.emprestar(String, int[], int)" because "this.controle" is null
+	at eng3.ControleTest.testEmprestarApenasAlgunsLivrosDisponiveis(ControleTest.java:50)
+
+eng3.ControleTest.testEmprestarComLimiteMaximo()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Controle.emprestar(String, int[], int)" because "this.controle" is null
+	at eng3.ControleTest.testEmprestarComLimiteMaximo(ControleTest.java:56)
+
+eng3.ControleTest.testEmprestarAcimaDoLimite()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Controle.emprestar(String, int[], int)" because "this.controle" is null
+	at eng3.ControleTest.testEmprestarAcimaDoLimite(ControleTest.java:62)
+

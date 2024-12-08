@@ -1,0 +1,40 @@
+-------------------------------------------------------------------------------
+Test set: eng3.EmprestimoTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.062 sec <<< FAILURE!
+eng3.EmprestimoTest.testEmprestimoComUmLivro()  Time elapsed: 0.003 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "java.util.List.add(Object)" because "this.livros" is null
+	at eng3.EmprestimoTest.testEmprestimoComUmLivro(EmprestimoTest.java:40)
+
+eng3.EmprestimoTest.testEmprestimoComMultiplosLivros()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "java.util.List.add(Object)" because "this.livros" is null
+	at eng3.EmprestimoTest.testEmprestimoComMultiplosLivros(EmprestimoTest.java:47)
+
+eng3.EmprestimoTest.testCalculoDataDeDevolucao()  Time elapsed: 0.053 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Livro.verPrazo()" because "this.livro" is null
+	at eng3.Item.calculaDataDevolucao(Item.java:40)
+	at eng3.EmprestimoTest.testCalculoDataDeDevolucao(EmprestimoTest.java:59)
+
+eng3.EmprestimoTest.testLivroNaoEmprestavel()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Livro.setEmprestavel(boolean)" because "this.livro1" is null
+	at eng3.EmprestimoTest.testLivroNaoEmprestavel(EmprestimoTest.java:71)
+
+eng3.EmprestimoTest.testItemAssociacaoLivro()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/junit/Assert
+	at eng3.EmprestimoTest.testItemAssociacaoLivro(EmprestimoTest.java:80)
+Caused by: java.lang.ClassNotFoundException: org.junit.Assert
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 15 more
+
+eng3.EmprestimoTest.testAlunoCadastradoSemDebitos()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "eng3.Aluno.verficaAluno()" because "this.aluno" is null
+	at eng3.EmprestimoTest.testAlunoCadastradoSemDebitos(EmprestimoTest.java:28)
+
+eng3.EmprestimoTest.testAlunoComDebitos()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/junit/Assert
+	at eng3.EmprestimoTest.testAlunoComDebitos(EmprestimoTest.java:35)
+Caused by: java.lang.ClassNotFoundException: org.junit.Assert
+	... 15 more
+
