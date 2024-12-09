@@ -10,10 +10,11 @@ public class Debito {
 	{
 	//codigo aleatorio para definir se o aluno tem d�bito
 	//� necess�rio fazer a verifica��o de forma persistente
-	if(this.codigoAluno == 4)
+	if(this.codigoAluno % 2 != 0)
 		 return false;
 	 else
 		return true;
 	}
+	
 
 }

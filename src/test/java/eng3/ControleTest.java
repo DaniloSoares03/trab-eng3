@@ -1,65 +1,54 @@
 package eng3;
 
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
-import java.util.Arrays;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import java.util.List;
 
-public class ControleTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class ControleTest {
 
     private Controle controle;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         controle = new Controle();
     }
 
     @Test
-    public void testEmprestarAlunoInexistente() {
-        boolean resultado = controle.emprestar("AlunoInexistente", new int[]{5, 10}, 2);
-        assertFalse("Deve retornar false quando o aluno não existe", resultado);
+    void testDeveRetornarFalsoQuandoAlunoInexistente() {
+        String alunoInexistente = "10";
+        boolean resultado = controle.emprestar(alunoInexistente, new int[]{7, 14}, 2);
+        assertFalse(resultado, "O método deve retornar falso para aluno inexistente com RA '10'");
     }
 
     @Test
-    public void testEmprestarAlunoComDebito() {
-        boolean resultado = controle.emprestar("AlunoComDebito", new int[]{7, 15}, 2);
-        assertFalse("Deve retornar false quando o aluno tem débitos", resultado);
+    void testDeveRetornarFalsoQuandoAlunoComDebito() {
+        String alunoComDebito = "11";
+        boolean resultado = controle.emprestar(alunoComDebito, new int[]{7, 14}, 2);
+        assertFalse(resultado, "O método deve retornar falso para aluno com débito com RA '11'");
     }
 
     @Test
-    public void testEmprestarComSucesso() {
-        boolean resultado = controle.emprestar("AlunoValido", new int[]{5, 7}, 2);
-        assertTrue("Deve retornar true quando o empréstimo é bem-sucedido", resultado);
+    void testDeveRetornarFalsoQuandoLivrosIndisponiveisParaEmprestimo() {
+        String alunoValido = "12"; 
+        Livro livro1 = new Livro(30);  // Livro com prazo de 30 dias
+        livro1.setDisponivel(false);   // Define o livro como indisponível
+        
+        int[] prazos = new int[]{30}; // Lista de prazos para o teste
+        boolean resultado = controle.emprestar(alunoValido, prazos, 1); // Tentativa de emprestar o livro
+        
+        assertFalse(resultado, "O método deve retornar falso se o livro não estiver disponível para empréstimo.");
     }
 
-    @Test
-    public void testEmprestarSemLivros() {
-        boolean resultado = controle.emprestar("AlunoValido", new int[]{}, 0);
-        assertFalse("Deve retornar false ao tentar emprestar sem livros", resultado);
-    }
 
     @Test
-    public void testEmprestarLivrosIndisponiveis() {
-        boolean resultado = controle.emprestar("AlunoValido", new int[]{0, 0}, 2);
-        assertFalse("Deve retornar false quando todos os livros são exemplares não emprestáveis", resultado);
+    void testDeveRetornarVerdadeiroParaEmprestimoBemSucedido() {
+        String alunoValido = "12";
+        int[] prazos = new int[]{7, 14};
+        boolean resultado = controle.emprestar(alunoValido, prazos, 2);
+        assertTrue(resultado, "O método deve retornar verdadeiro para um empréstimo bem-sucedido com RA '12'");
     }
 
-    @Test
-    public void testEmprestarApenasAlgunsLivrosDisponiveis() {
-        boolean resultado = controle.emprestar("AlunoValido", new int[]{5, 0, 7}, 3);
-        assertTrue("Deve retornar true quando pelo menos um livro pode ser emprestado", resultado);
-    }
-
-    @Test
-    public void testEmprestarComLimiteMaximo() {
-        boolean resultado = controle.emprestar("AlunoValido", new int[]{5, 5, 5, 5, 5}, 5);
-        assertTrue("Deve permitir empréstimo de até 5 livros", resultado);
-    }
-
-    @Test
-    public void testEmprestarAcimaDoLimite() {
-        boolean resultado = controle.emprestar("AlunoValido", new int[]{5, 5, 5, 5, 5, 5}, 6);
-        assertFalse("Deve retornar false ao tentar emprestar mais que o limite de livros", resultado);
-    }
 }

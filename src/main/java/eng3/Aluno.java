@@ -28,6 +28,7 @@ else
 	return true;
 }
 
+
 public boolean verificaDebito()
 {       //instancia um objeto d�bito
 	   Debito debito = new Debito( Integer.parseInt(this.RA)); 

@@ -43,7 +43,7 @@ public class Emprestimo {
     	
 	}
     
-	private Date CalculaDataDevolucao()
+	public Date CalculaDataDevolucao()
 	{   
 		Date date = new Date();
 		
